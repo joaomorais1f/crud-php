@@ -1,0 +1,9 @@
+{
+    "better-comments.multilineComments": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "editor.renderLineHighlight": "gutter",
+    "editor.tabSize": 2
+}
