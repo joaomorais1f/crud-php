@@ -33,8 +33,12 @@
         <h2> <?=$product['productName']?></h2>
       </header>
       <div class="card-content">
-        <h3> Categoria: <?=$product['productCategory'] ?> </h3>
+          <h3> Categoria: <span> <?=$product['productCategory'] ?> </span> </h3>
+          <h3> Preço: <span> R$ <?=$product['productPrice'] ?> </span> </h3>
       </div>
+      <footer>
+        <a href="../pages/shoppingCart.php?id=<?=$product['idProduct']?>" class="btn shop-cart"> Carrinho </a>
+      </footer>
       </div>
   </section>
   <?php  } ?>

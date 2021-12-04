@@ -15,7 +15,7 @@
   <nav class="navbar">
     <a href="./index.php" class="navbar-brand"> Logo </a>
     <ul class="navbar-nav">
-      <?php session_start(); if (!isset($_SESSION['user'])) : ?>
+      <?php if (!isset($_SESSION['user'])) : ?>
       <li class="nav-item">
         <a href="./src/actions/pages/register.php" class="nav-link"> Criar Conta </a>
       </li>
@@ -23,6 +23,11 @@
         <a href="./src/actions/pages/login.php" class="nav-link"> Entrar </a>
       </li>
       <?php else: ?>
+        <?php if (isset($_SESSION['shoppingCart'])) : ?>
+      <li class="nav-item">
+        <a href="./src/actions/pages/shoppingCart.php" class="nav-link"> Carrinho </a>
+      </li>
+        <?php endif; ?>
       <li class="nav-item">
         <a href="./src/actions/pages/product.php" class="nav-link"> Produto </a>
       </li>
@@ -42,7 +47,8 @@
           <h2> <?=$product['productName']?></h2>
         </header>
         <div class="card-content">
-          <h3> Categoria: <?=$product['productCategory'] ?> </h3>
+          <h3> Categoria: <span> <?=$product['productCategory'] ?> </span> </h3>
+          <h3> Preço: <span> R$ <?=$product['productPrice'] ?> </span> </h3>
         </div>
         <?php 
           if (isset($_SESSION['user'])) {

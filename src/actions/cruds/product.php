@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require 'conexion.php';
 
   function addNewProduct($productName, $productPrice, $productCategory, $productDirectory, $userId) {
